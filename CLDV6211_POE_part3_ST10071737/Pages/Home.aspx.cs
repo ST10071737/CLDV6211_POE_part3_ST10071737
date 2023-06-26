@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CLDV6211_POE_part3_ST10071737
 {
-    public partial class Contact : Page
+    public partial class Home : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

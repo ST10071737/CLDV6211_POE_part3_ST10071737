@@ -1,4 +1,4 @@
-﻿<%@ Page Title="The Ride You Rent - Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CLDV6211_POE_part3_ST10071737._Default" %>
+﻿<%@ Page Title="The Ride You Rent - Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="CLDV6211_POE_part3_ST10071737.Home" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main class="container">

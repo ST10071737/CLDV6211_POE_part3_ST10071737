@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CLDV6211_POE_part3_ST10071737
+namespace CLDV6211_POE_part3_ST10071737.Pages
 {
 
 
-    public partial class _Default
+    public partial class Cars
     {
     }
 }
