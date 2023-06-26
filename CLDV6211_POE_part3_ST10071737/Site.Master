@@ -16,13 +16,32 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <style>
-    .border-input {
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 6px 12px;
-    }
-</style>
+        html, body {
+            height: 100%;
+        }
 
+        .wrapper {
+            min-height: 100%;
+            position: relative;
+        }
+
+        .content {
+            padding-bottom: 50px; /* Height of the footer */
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+        }
+
+        .border-input {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -45,29 +64,41 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Application name</a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
+        <div class="wrapper">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand" runat="server" href="~/">The Ride You Rent</a>
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        title="Toggle navigation" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/Rentals">Rentals</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Returns</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Items</a></li>
+                        </ul>
+                    </div>
                 </div>
+            </nav>
+
+            <div class="content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <hr />
             </div>
-        </nav>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
+
+            <div class="footer">
+    <div class="container">
+        <footer>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="margin: 0;">&copy; <%: DateTime.Now.Year %> - Jasper van Niekerk ST10071737</p>
+                <a class="btn btn-primary" href="https://github.com/ST10071737/CLDV6211_POE_part3_ST10071737">GitHub Repository</a>
+            </div>
+        </footer>
+    </div>
+</div>
         </div>
     </form>
     <asp:PlaceHolder runat="server">
