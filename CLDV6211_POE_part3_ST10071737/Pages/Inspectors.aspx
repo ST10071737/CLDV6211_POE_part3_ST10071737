@@ -6,7 +6,7 @@
 
         <!-- Create Inspector -->
         <h3>Create Inspector</h3>
-        <form runat="server">
+        
             <div class="form-group">
                 <label for="txtInspectorNo">Inspector Number:</label>
                 <input type="text" id="txtInspectorNo" class="form-control" />
@@ -32,25 +32,7 @@
                     <button type="submit" class="btn btn-primary">Create</button>
                 </div>
             </div>
-        </form>
-
-        <!-- Inspector Search -->
-        <h3>Inspector Search</h3>
-        <form runat="server">
-            <div class="form-group">
-                <label for="txtSearchInspectorNo">Inspector Number:</label>
-                <input type="text" id="txtSearchInspectorNo" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label for="txtSearchName">Name:</label>
-                <input type="text" id="txtSearchName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <div class="form-group" style="margin-top: 10px;">
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </div>
-            </div>
-        </form>
+        
 
         <!-- Display Search Results -->
         <h3>Search Results</h3>

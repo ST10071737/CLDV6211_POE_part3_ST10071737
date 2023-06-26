@@ -6,7 +6,6 @@
 
         <!-- Create Driver -->
         <h3>Create Driver</h3>
-        <form runat="server">
             <div class="form-group">
                 <label for="txtDriverNo">Driver Number:</label>
                 <input type="text" id="txtDriverNo" class="form-control" />
@@ -32,11 +31,9 @@
                     <button type="submit" class="btn btn-primary">Create</button>
                 </div>
             </div>
-        </form>
 
         <!-- Driver Search -->
         <h3>Driver Search</h3>
-        <form runat="server">
             <div class="form-group">
                 <label for="txtSearchDriverNo">Driver Number:</label>
                 <input type="text" id="txtSearchDriverNo" class="form-control" />
@@ -50,7 +47,6 @@
                     <button type="submit" class="btn btn-primary">Search</button>
                 </div>
             </div>
-        </form>
 
         <!-- Display Search Results -->
         <h3>Search Results</h3>

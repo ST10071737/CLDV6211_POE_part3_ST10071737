@@ -6,7 +6,6 @@
 
         <!-- Create Car -->
         <h3>Create Car</h3>
-        <form runat="server">
             <div class="form-group">
                 <label for="txtCarNo">Car Number:</label>
                 <input type="text" id="txtCarNo" class="form-control" />
@@ -48,11 +47,9 @@
                     <button type="submit" class="btn btn-primary">Create</button>
                 </div>
             </div>
-        </form>
 
         <!-- Car Search -->
         <h3>Car Search</h3>
-        <form runat="server">
             <div class="form-group">
                 <label for="txtSearchCarNo">Car Number:</label>
                 <input type="text" id="txtSearchCarNo" class="form-control" />
@@ -82,7 +79,6 @@
                     <button type="submit" class="btn btn-primary">Search</button>
                 </div>
             </div>
-        </form>
 
         <!-- Display Search Results -->
         <h3>Search Results</h3>

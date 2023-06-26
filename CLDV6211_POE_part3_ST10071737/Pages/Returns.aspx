@@ -58,9 +58,9 @@
                  <div class="col-md-6">
                         <h2>Return List</h2>
                           <tbody>
-                              <asp:GridView ID="GridViewReturns" runat="server" CssClass="table" DataSourceID="retunsDataSourse">
+                              <asp:GridView ID="GridViewReturns" runat="server" CssClass="table" DataSourceID="SqlDataSource1">
                             </asp:GridView>
-                              <asp:SqlDataSource runat="server" ID="retunsDataSourse"></asp:SqlDataSource>
+                              <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
                            </tbody>
                          </table>
                     </div>

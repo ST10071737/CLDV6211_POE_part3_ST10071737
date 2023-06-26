@@ -16,7 +16,7 @@ namespace CLDV6211_POE_part3_ST10071737
             if (AuthenticateUser(username, password))
             {
                 // Redirect to the home page or any other desired page upon successful login
-                //Response.Redirect("~/Default.aspx");
+                Response.Redirect("~/Pages/Home.aspx");
             }
             else
             {

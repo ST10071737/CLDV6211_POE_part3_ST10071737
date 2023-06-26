@@ -44,7 +44,7 @@
     </style>
 </head>
 <body>
-    <form runat="server">
+    <form id="form1" runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -90,19 +90,19 @@
             </div>
 
             <div class="footer">
-    <div class="container">
-        <footer>
-            <div style="display: flex; justify-content: space-between;">
-                <p style="margin: 0;">&copy; <%: DateTime.Now.Year %> - Jasper van Niekerk ST10071737</p>
-                <a class="btn btn-primary" href="https://github.com/ST10071737/CLDV6211_POE_part3_ST10071737">GitHub Repository</a>
+                <div class="container">
+                    <footer>
+                        <div style="display: flex; justify-content: space-between;">
+                            <p style="margin: 0;">&copy; <%: DateTime.Now.Year %> - Jasper van Niekerk ST10071737</p>
+                            <a class="btn btn-primary" href="https://github.com/ST10071737/CLDV6211_POE_part3_ST10071737">GitHub Repository</a>
+                        </div>
+                    </footer>
+                </div>
             </div>
-        </footer>
-    </div>
-</div>
         </div>
+        <asp:PlaceHolder runat="server">
+            <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+        </asp:PlaceHolder>
     </form>
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    </asp:PlaceHolder>
 </body>
 </html>
