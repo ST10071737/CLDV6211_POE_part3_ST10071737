@@ -4,19 +4,19 @@ using System.Web.UI;
 
 namespace CLDV6211_POE_part3_ST10071737
 {
-    public partial class Login : Page
+    public partial class Login : System.Web.UI.Page
     {
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             // Check the entered username and password
-            string username = txtUsername.Text;
+            string username = txtUsername.Text;  
             string password = txtPassword.Text;
 
             // Perform authentication logic here
             if (AuthenticateUser(username, password))
             {
                 // Redirect to the home page or any other desired page upon successful login
-                Response.Redirect("~/Default.aspx");
+                //Response.Redirect("~/Default.aspx");
             }
             else
             {

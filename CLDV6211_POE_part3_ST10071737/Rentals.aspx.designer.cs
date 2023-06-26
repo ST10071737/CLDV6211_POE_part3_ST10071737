@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace System.Web.UI
+namespace CLDV6211_POE_part3_ST10071737
 {
 
 
-    public partial class Page
+    public partial class Rentals
     {
     }
 }
