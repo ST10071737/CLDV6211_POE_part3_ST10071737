@@ -4,47 +4,52 @@
     <div class="container">
         <h2>Cars</h2>
 
+        <style>
+    .custom-button {
+        background-color: #8ACB88 !important;
+        border-color: #8ACB88 !important;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .custom-button:hover {
+        background-color: #6D9D76 !important;
+        border-color: #6D9D76 !important;
+    }
+</style>
+
         <!-- Create Car -->
         <h3>Create Car</h3>
             <div class="form-group">
                 <label for="txtCarNo">Car Number:</label>
-                <input type="text" id="txtCarNo" class="form-control" />
+                <input type="text" id="txtCarNo" runat="server" class="form-control" />
             </div>
             <div class="form-group">
                 <label for="ddlCarMakeNo">Car Make:</label>
-                <select id="ddlCarMakeNo" class="form-control">
-                    <option value="1">Make 1</option>
-                    <option value="2">Make 2</option>
-                    <!-- Add more options for car makes -->
-                </select>
+                <input type="text" id="ddlCarMakeNo" runat="server" class="form-control"/>
             </div>
             <div class="form-group">
                 <label for="txtModel">Model:</label>
-                <input type="text" id="txtModel" class="form-control" />
+                <input type="text" id="txtModel" runat="server" class="form-control" />
             </div>
             <div class="form-group">
                 <label for="ddlCarBodyType">Car Body Type:</label>
-                <select id="ddlCarBodyType" class="form-control">
-                    <option value="1">Body Type 1</option>
-                    <option value="2">Body Type 2</option>
-                    <!-- Add more options for car body types -->
-                </select>
+                <input type="text" id="ddlCarBodyType" runat="server" class="form-control"/>
             </div>
             <div class="form-group">
                 <label for="txtKilometersTraveled">Kilometers Traveled:</label>
-                <input type="text" id="txtKilometersTraveled" class="form-control" />
+                <input type="text" id="txtKilometersTraveled" runat="server" class="form-control" />
             </div>
             <div class="form-group">
                 <label for="txtServiceKilometers">Service Kilometers:</label>
-                <input type="text" id="txtServiceKilometers" class="form-control" />
+                <input type="text" id="txtServiceKilometers" runat="server" class="form-control" />
             </div>
             <div class="form-group">
                 <label for="chkAvailable">Available:</label>
-                <input type="checkbox" id="chkAvailable" class="form-check-input" />
+                <input type="checkbox" id="chkAvailable" runat="server" class="form-check-input" />
             </div>
             <div class="form-group">
                 <div class="form-group" style="margin-top: 10px;">
-                    <button type="submit" class="btn btn-primary">Create</button>
+                   <asp:Button ID="btnCreateCar" type="submit" class="btn btn-primary custom-button" runat="server" Text="Create" OnClick="CreateCar_Click"/>
                 </div>
             </div>
 
@@ -76,7 +81,7 @@
             </div>
             <div class="form-group">
                 <div class="form-group" style="margin-top: 10px;">
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-primary custom-button">Search</button>
                 </div>
             </div>
 
@@ -84,44 +89,24 @@
         <h3>Search Results</h3>
         <div id="searchResults">
             <!-- Display the search results here -->
-            <table class="table table-striped">
-                <!-- Table structure for displaying search results -->
-                <thead>
-                    <tr>
-                        <th>Car Number</th>
-                        <th>Car Make</th>
-                        <th>Model</th>
-                        <th>Car Body Type</th>
-                        <th>Kilometers Traveled</th>
-                        <th>Service Kilometers</th>
-                        <th>Available</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Car 1</td>
-                        <td>Make 1</td>
-                        <td>Model 1</td>
-                        <td>Body Type 1</td>
-                        <td>10000</td>
-                        <td>5000</td>
-                        <td>Yes</td>
-                        <td>
-                            <button class="btn btn-primary">Update</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <!-- Add more rows for other search results -->
-                </tbody>
-            </table>
+            <h3>Search Results</h3>
+            <ItemTemplate>
+            <asp:GridView ID="GridViewSearchResults" runat="server" Class="table" AutoGenerateColumns="true">
+                 <Columns>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button ID="btnUpdate" runat="server" Text="Update" Class="btn btn-primary"/>
+                            <asp:Button ID="btnDelete" runat="server" Text="Delete" Class="btn btn-danger" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
         </div>
 
         <!-- Display Cars -->
         <h3>Cars List</h3>
         <div class="row">
             <div class="col-md-12">
-                <h2>Rental List</h2>
                 <asp:GridView ID="GridViewRentals" runat="server" CssClass="table" AutoGenerateColumns="true"></asp:GridView>
                 <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
             </div>

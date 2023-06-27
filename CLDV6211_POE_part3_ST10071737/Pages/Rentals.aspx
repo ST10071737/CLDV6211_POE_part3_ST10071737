@@ -3,6 +3,21 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <h1>Rentals</h1>
+
+        <style>
+    .custom-button {
+        background-color: #8ACB88 !important;
+        border-color: #8ACB88 !important;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .custom-button:hover {
+        background-color: #6D9D76 !important;
+        border-color: #6D9D76 !important;
+    }
+</style>
+
+
 <!-- Create Rental Form -->
         <div class="row">
             <div class="col-md-6">
@@ -53,7 +68,7 @@
                     <div class="col-md-12 text-center">
                          <div class="form-group" style="margin-top: 10px;">
                              <!--<button type="submit" class="btn btn-primary" OnClick="CreateRental_Click" CausesValidation="False">Create</button>-->
-                             <asp:Button ID="btnCreateReturn" type="submit" class="btn btn-primary" runat="server" Text="Create" OnClick="CreateRental_Click"/>
+                              <asp:Button ID="btnCreateRental" type="submit" class="btn btn-primary custom-button" runat="server" Text="Create" OnClick="CreateRental_Click"/>
                          </div>
                         <Label ID="lblMessage" runat="server" CssClass="text-success"></Label>
                     </div>
