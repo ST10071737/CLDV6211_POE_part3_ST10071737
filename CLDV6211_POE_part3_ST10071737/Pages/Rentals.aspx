@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h2>Create Rental</h2>
-                <form>
+                <form OnSubmit="CreateRental_Click">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -52,9 +52,10 @@
                     </div>
                     <div class="col-md-12 text-center">
                          <div class="form-group" style="margin-top: 10px;">
-                             <button type="submit" class="btn btn-primary" OnClick="CreateRental_Click">Create</button>
+                             <!--<button type="submit" class="btn btn-primary" OnClick="CreateRental_Click" CausesValidation="False">Create</button>-->
+                             <asp:Button ID="btnCreateReturn" type="submit" class="btn btn-primary" runat="server" Text="Create" OnClick="CreateRental_Click"/>
                          </div>
-                        <asp:Label ID="lblMessage" runat="server" CssClass="text-success"></asp:Label>
+                        <Label ID="lblMessage" runat="server" CssClass="text-success"></Label>
                     </div>
                 </form>
             </div>
@@ -64,8 +65,12 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Rental List</h2>
-                <asp:GridView ID="GridViewRentals" runat="server" CssClass="table" AutoGenerateColumns="true"></asp:GridView>
-                <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
+                <asp:UpdatePanel ID="UpdatePanelGridView" runat="server">
+                    <ContentTemplate>
+                        <asp:GridView ID="GridViewRentals" runat="server" CssClass="table" AutoGenerateColumns="true"></asp:GridView>
+                        <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
         </div>
     </div>
