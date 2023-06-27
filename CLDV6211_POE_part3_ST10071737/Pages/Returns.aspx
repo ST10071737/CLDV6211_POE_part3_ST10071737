@@ -51,6 +51,7 @@
                             <div class="form-group" style="margin-top: 10px;">
                                 <button type="submit" class="btn btn-primary">Create</button>
                             </div>
+                            <asp:Label ID="lblMessage" runat="server" CssClass="text-success"></asp:Label>
                         </div>
                     </form>
                 </div>
@@ -58,8 +59,7 @@
                  <div class="col-md-6">
                         <h2>Return List</h2>
                           <tbody>
-                              <asp:GridView ID="GridViewReturns" runat="server" CssClass="table" DataSourceID="SqlDataSource1">
-                            </asp:GridView>
+                              <asp:GridView ID="GridViewRentals" runat="server" CssClass="table" AutoGenerateColumns="true"></asp:GridView>
                               <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
                            </tbody>
                          </table>

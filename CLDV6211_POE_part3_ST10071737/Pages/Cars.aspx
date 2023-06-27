@@ -119,30 +119,12 @@
 
         <!-- Display Cars -->
         <h3>Cars List</h3>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Car Number</th>
-                    <th>Car Make</th>
-                    <th>Model</th>
-                    <th>Car Body Type</th>
-                    <th>Kilometers Traveled</th>
-                    <th>Service Kilometers</th>
-                    <th>Available</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Populate with data from the Cars table -->
-                <tr>
-                    <td>123</td>
-                    <td>Make 1</td>
-                    <td>Model 1</td>
-                    <td>Body Type 1</td>
-                    <td>10000</td>
-                    <td>5000</td>
-                    <td>Yes</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Rental List</h2>
+                <asp:GridView ID="GridViewRentals" runat="server" CssClass="table" AutoGenerateColumns="true"></asp:GridView>
+                <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
+            </div>
+        </div>
     </div>
 </asp:Content>

@@ -1,10 +1,9 @@
-﻿<%@ Page Title="Rentals" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Rentals.aspx.cs" Inherits="CLDV6211_POE_part3_ST10071737.Rentals" %>
+﻿<%@ Page Title="Rentals" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Rentals.aspx.cs" Inherits="CLDV6211_POE_part3_ST10071737.Rentals" EnableEventValidation="false"%>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <h1>Rentals</h1>
-
-                     <!-- Create Rental Form -->
+<!-- Create Rental Form -->
         <div class="row">
             <div class="col-md-6">
                 <h2>Create Rental</h2>
@@ -12,45 +11,50 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="txtRentalNo">Rental number:</label>
+                                <input type="text" id="txtRentalNo" runat="server" class="form-control" />
+                            </div>
+                            <div class="form-group">
                                 <label for="txtCar">Car:</label>
-                                <input type="text" id="txtCar" class="form-control" />
+                                <input type="text" id="txtCar" runat="server" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="txtDriver">Driver:</label>
-                                <input type="text" id="txtDriver" class="form-control" />
+                                <input type="text" id="txtDriver" runat="server" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="txtRentalFee">Rental Fee:</label>
-                                <input type="text" id="txtRentalFee" class="form-control" />
+                                <input type="text" id="txtRentalFee" runat="server" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="txtStartDate">Start Date:</label>
-                                <input type="text" id="txtStartDate" class="form-control" />
+                                <input type="text" id="txtStartDate" runat="server" class="form-control" />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="txtEndDate">End Date:</label>
-                                <input type="text" id="txtEndDate" class="form-control" />
+                                <input type="text" id="txtEndDate" runat="server" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="txtPickUpLocation">Pick-Up Location:</label>
-                                <input type="text" id="txtPickUpLocation" class="form-control" />
+                                <input type="text" id="txtPickUpLocation" runat="server" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="txtDropOffLocation">Drop-Off Location:</label>
-                                <input type="text" id="txtDropOffLocation" class="form-control" />
+                                <input type="text" id="txtDropOffLocation" runat="server" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label for="txtInspector">Inspector:</label>
-                                <input type="text" id="txtInspector" class="form-control" />
+                                <input type="text" id="txtInspector" runat="server" class="form-control" />
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12 text-center">
                          <div class="form-group" style="margin-top: 10px;">
-                            <button type="submit" class="btn btn-primary">Create</button>
+                             <button type="submit" class="btn btn-primary" OnClick="CreateRental_Click">Create</button>
                          </div>
+                        <asp:Label ID="lblMessage" runat="server" CssClass="text-success"></asp:Label>
                     </div>
                 </form>
             </div>
@@ -60,46 +64,8 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Rental List</h2>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Rental No</th>
-                            <th>Car No</th>
-                            <th>Driver No</th>
-                            <th>Rental Fee</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Pick-Up Location</th>
-                            <th>Drop-Off Location</th>
-                            <th>Inspector No</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Car 1</td>
-                            <td>Driver 1</td>
-                            <td>$50</td>
-                            <td>2023-06-01</td>
-                            <td>2023-06-10</td>
-                            <td>Location 1</td>
-                            <td>Location 2</td>
-                            <td>Inspector 1</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Car 2</td>
-                            <td>Driver 2</td>
-                            <td>$60</td>
-                            <td>2023-06-05</td>
-                            <td>2023-06-15</td>
-                            <td>Location 3</td>
-                            <td>Location 4</td>
-                            <td>Inspector 2</td>
-                        </tr>
-                        <!-- Add more rows for other rental objects -->
-                    </tbody>
-                </table>
+                <asp:GridView ID="GridViewRentals" runat="server" CssClass="table" AutoGenerateColumns="true"></asp:GridView>
+                <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
             </div>
         </div>
     </div>

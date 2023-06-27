@@ -83,27 +83,13 @@
 
         <!-- Display Drivers -->
         <h3>Drivers List</h3>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Driver Number</th>
-                    <th>First Name</th>
-                    <th>Surname</th>
-                    <th>Email</th>
-                    <th>Mobile</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Populate with data from the Driver table -->
-                <tr>
-                    <td>123</td>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>johndoe@example.com</td>
-                    <td>123456789</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Rental List</h2>
+                <asp:GridView ID="GridViewRentals" runat="server" CssClass="table" AutoGenerateColumns="true"></asp:GridView>
+                <asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
+            </div>
+        </div>
     </div>
 </asp:Content>
 
